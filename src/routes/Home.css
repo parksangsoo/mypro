@@ -1,0 +1,35 @@
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  border-style: solid;
+  border-radius: 10px;
+  border-color: rgb(255, 217, 0);
+  margin: auto;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.loader {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 300;
+}
+
+.movies {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(10rem, 1fr));
+  grid-gap: 30px;
+  padding: 50px;
+  padding-top: 70px;
+}
+
+@media screen and (max-width: 1090px) {
+  .movies {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+}
