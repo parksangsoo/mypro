@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/mypro/static/css/main.ef7eb995.chunk.css",
+    "main.js": "/mypro/static/js/main.c835054c.chunk.js",
+    "main.js.map": "/mypro/static/js/main.c835054c.chunk.js.map",
+    "runtime-main.js": "/mypro/static/js/runtime-main.537edb94.js",
+    "runtime-main.js.map": "/mypro/static/js/runtime-main.537edb94.js.map",
+    "static/js/2.91a79044.chunk.js": "/mypro/static/js/2.91a79044.chunk.js",
+    "static/js/2.91a79044.chunk.js.map": "/mypro/static/js/2.91a79044.chunk.js.map",
+    "index.html": "/mypro/index.html",
+    "precache-manifest.8094244c75c6e07773cb13290da1eeb8.js": "/mypro/precache-manifest.8094244c75c6e07773cb13290da1eeb8.js",
+    "service-worker.js": "/mypro/service-worker.js",
+    "static/css/main.ef7eb995.chunk.css.map": "/mypro/static/css/main.ef7eb995.chunk.css.map",
+    "static/js/2.91a79044.chunk.js.LICENSE.txt": "/mypro/static/js/2.91a79044.chunk.js.LICENSE.txt",
+    "static/media/card_main_logo.png": "/mypro/static/media/card_main_logo.7559a456.png",
+    "static/media/Home.css": "/mypro/static/media/cards-bg.2da2791e.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.537edb94.js",
+    "static/js/2.91a79044.chunk.js",
+    "static/css/main.ef7eb995.chunk.css",
+    "static/js/main.c835054c.chunk.js"
+  ]
+}
