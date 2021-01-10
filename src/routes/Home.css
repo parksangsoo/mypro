@@ -1,13 +1,21 @@
 .container {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  border-style: solid;
-  border-radius: 10px;
-  border-color: rgb(255, 217, 0);
+  width: 1050px;
   margin: auto;
-  margin-left: 10%;
-  margin-right: 10%;
+  padding-top: 20px;
+}
+
+h1 {
+  text-align: center;
+  padding-bottom: 80px;
+}
+
+.wrap {
+  background-image: url("../imgs/cards-bg.jpg");
+  height: 10rem;
+}
+
+.nava {
+  padding-top: 200px;
 }
 
 .loader {
@@ -19,17 +27,20 @@
   font-weight: 300;
 }
 
-.movies {
+.cards {
   display: grid;
-  grid-template-columns: repeat(4, minmax(10rem, 1fr));
-  grid-gap: 30px;
-  padding: 50px;
-  padding-top: 70px;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 1em;
 }
 
 @media screen and (max-width: 1090px) {
-  .movies {
-    grid-template-columns: 1fr;
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1em;
+  }
+
+  .container {
     width: 100%;
+    padding: 20px;
   }
 }
