@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import './Detail.css';
+import './CardDetail.css';
 
-const Detail = ({ location,history }) => {
+const CardDetail = ({ location,history }) => {
 
     useEffect(() => {
         if(location.state === undefined){
@@ -29,12 +29,12 @@ const Detail = ({ location,history }) => {
                     </div>
                     <div className="pokemon-info">카드 종류 : {card.info.subtype} {card.info.supertype}</div>
                     <div className="pokemon-abilities">
-                    {card.info.attacks.map(movie => (
-                        <div className="ability" key={movie.name}>
+                    {card.info.attacks.map(card => (
+                        <div className="ability" key={card.name}>
                             <div className="area-parent">
-                                <span className="skillname">스킬이름:{movie.name}</span>
+                                <span className="skillname">스킬이름:{card.name}</span>
                             </div>
-                            <p>스킬설명:{movie.text}</p>
+                            <p>스킬설명:{card.text}</p>
                         </div>
                     ))}
                     </div>
@@ -47,4 +47,4 @@ const Detail = ({ location,history }) => {
                 
 }
 
-export default Detail;
+export default CardDetail;

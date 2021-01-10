@@ -2,13 +2,12 @@
   padding-top: 280px;
   background-color: white;
   display: flex;
-  width: 70%;
-  margin: auto;
+  width: 100%;
 }
 
 .leftinfo {
   background-color: white;
-  margin-left: 50px;
+  margin-left: 25%;
 }
 
 .leftinfo p {
@@ -22,7 +21,7 @@
   height: 300px;
   margin-left: 5%;
   margin-bottom: 100px;
-  margin-right: 5%;
+  margin-right: 20%;
 }
 
 .name {

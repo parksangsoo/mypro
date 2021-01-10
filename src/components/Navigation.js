@@ -6,10 +6,11 @@ import './Navigation.css';
 const Navigation = () =>{
     return(
         <>
-        <div className="nav">
-            <Link to="/" ><img src={logo}/></Link>
-        </div>
+            <div className="nav">
+                <Link to="/" ><img src={logo}/></Link>
+            </div>
         </>
+
     );
 }
 

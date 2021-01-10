@@ -8,14 +8,13 @@ const Card = ({ info, image, name }) =>{
 return (
         <div className="card">
             <Link to={{
-                        pathname: '/movie-card',
+                        pathname: '/card-detail',
                         state: { info },
             }}>
             <img src={image} alt={name} title={name}/>
             </Link>
         </div>
-
-);
+    );
 }
 
 Card.propTypes = { 
