@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import './Card.css';
 
@@ -17,8 +16,5 @@ return (
     );
 }
 
-Card.propTypes = { 
-    image: PropTypes.string.isRequired
-};
 
 export default Card;

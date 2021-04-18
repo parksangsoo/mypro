@@ -1,0 +1,17 @@
+p {
+    font-size: 20px;
+}
+
+.menu{
+    padding: 30px;
+    cursor: pointer;
+    align-items: center;
+    line-height: 28px;
+}
+
+.menu:hover{
+    background-color: red;
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+

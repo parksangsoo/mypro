@@ -23,12 +23,9 @@ const Home = () => {
 
       return (
         <>
-        <section className="nava">
-        
-        </section>
           <h1 className="cs">상세정보를 볼 카드를 클릭해주세요</h1>
-          <div className="wrap">
-          </div>
+          <div className="wrap"></div>
+
         <section className="container">
           {loading ? (
             <div className="loader" >
