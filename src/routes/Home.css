@@ -32,15 +32,3 @@ h1 {
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 1em;
 }
-
-@media screen and (max-width: 1090px) {
-  .cards {
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 1em;
-  }
-
-  .container {
-    width: 100%;
-    padding: 20px;
-  }
-}

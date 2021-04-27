@@ -1,0 +1,31 @@
+.nav {
+  z-index: 1;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background-color: white;
+  margin-top: -25px;
+  box-shadow: 0 1px 20px 0px rgb(0 0 0 / 30%);
+}
+
+.title {
+  margin-left: 90px;
+  margin-top: 30px;
+}
+
+.menu1{
+  display: flex;
+}
+
+.menu1-1{
+  display: flex;
+  margin-right: 300px;
+  align-items: center;
+}
+
+.menu1-2{
+  display: flex;
+  text-align: center;
+  padding-top: 10px;
+}
