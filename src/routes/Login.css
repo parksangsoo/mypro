@@ -1,0 +1,76 @@
+.p{
+    font-size: 20px;
+}
+
+.loginmain{
+    position:absolute;
+    border: 1px gray solid;
+    top: 200px;
+    left: 35%;
+    width: 600px;
+}
+
+.inputbox{
+    padding: 20px;
+    
+}
+
+.inputid{
+    display: flex;
+    justify-content: space-between;
+    padding-right: 40px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.inputid > input{
+    width: 300px;
+    height: 30px;
+}
+
+.inputpass{
+    display: flex;
+    justify-content: space-between;
+    padding-right: 40px;
+    align-items: center;
+}
+
+.inputpass > input{
+    width: 300px;
+    height: 30px;
+}
+
+
+.logintextbox{
+    background-color: #f8f8f8;
+    padding: 10px;
+    padding-left: 30px;
+}
+
+
+.bottom{
+    background-color: #f8f8f8;
+    padding: 30px;
+    display: flex;
+}
+
+.buttonbox{
+    margin-left: auto;
+}
+
+.membutton{
+    background-color: #737373;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+.loginbutton{
+    background-color: #2da5da;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+}

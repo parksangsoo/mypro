@@ -22,10 +22,7 @@ const Home = () => {
   },[]);
 
       return (
-        <>
-          <h1 className="cs">상세정보를 볼 카드를 클릭해주세요</h1>
-          <div className="wrap"></div>
-
+        <div className="home">
         <section className="container">
           {loading ? (
             <div className="loader" >
@@ -39,7 +36,7 @@ const Home = () => {
           </div>
           )}
         </section>
-        </>
+        </div>
       );
 }
 

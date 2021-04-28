@@ -24,12 +24,11 @@ const Header = () =>{
                         <Menu title="플레이어즈"/>
                     </div>
                     <div className="menu1-2">
+                    <Link to="/login" >
                         <Menu Icon={PersonIcon} title="로그인"/>
+                    </Link>
                         <Menu Icon={SearchIcon} title="카드검색"/>
                     </div>
-                </div>
-                <div className="menu2">
-
                 </div>
             </div>
         </>
