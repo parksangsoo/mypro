@@ -1,0 +1,44 @@
+.registermain{
+    position:absolute;
+    border: 1px gray solid;
+    top: 200px;
+    left: 35%;
+    width: 600px;
+}
+
+.registertitle{
+    background-color: #f8f8f8;
+    padding: 10px;
+    padding-left: 30px;
+    border: 1px gray solid;
+}
+
+
+.register1{
+    border: 1px gray solid;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+
+}
+
+.register1 > input{
+    margin-bottom: 20px;
+}
+
+.buttonbox{
+    padding: 30px;
+    display: flex;
+    background-color: #f8f8f8;
+}
+
+.rightbox{
+    margin-left: auto;
+}
+
+.registerbutton{
+    background-color: #2da5da;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+}

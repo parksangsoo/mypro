@@ -13,7 +13,7 @@ import Register from './routes/Register';
 
 function App() {
   return (
-    <div classNmae="app">
+    <div className="app">
     <Router>
       <Header />
       <Switch>
