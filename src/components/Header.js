@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../imgs/card_main_logo.png';
 import Menu from './Menu';
+import RightMenu from './RightMenu';
 import './Header.css';
-import PersonIcon from "@material-ui/icons/Person";
-import SearchIcon from "@material-ui/icons/Search";
+
 
 const Header = () =>{
     return(
@@ -23,12 +23,7 @@ const Header = () =>{
                         <Menu title="덱레시피"/>
                         <Menu title="플레이어즈"/>
                     </div>
-                    <div className="menu1-2">
-                    <Link to="/login" >
-                        <Menu Icon={PersonIcon} title="로그인"/>
-                    </Link>
-                        <Menu Icon={SearchIcon} title="카드검색"/>
-                    </div>
+                    <RightMenu/>
                 </div>
             </div>
         </>

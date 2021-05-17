@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import Card from '../components/Card';
 import './Home.css';
@@ -7,19 +7,44 @@ import './Home.css';
 const Home = () => {
   const [cards,setCards] = useState([]);
   const [loading,setLoading] = useState(true);
+  const [CurrentPage, setCurrentPage] = useState(0);
+  
+  const loadMoreItems = () => {
+    const endpoint = `https://api.pokemontcg.io/v2/cards?page=1&pageSize=${CurrentPage + 20}`;
+    getCards(endpoint);
+}
+
+  const handleScroll = () => {
+    const scrollHeight = document.documentElement.scrollHeight;
+    const scrollTop = document.documentElement.scrollTop;
+    const clientHeight = document.documentElement.clientHeight;
+
+    if(scrollTop + clientHeight >= scrollHeight) {
+      loadMoreItems();
+    }
+  }
 
   useEffect(() => {
-    const getCards = async() => {
-      try{
-        const response = await axios.get('https://api.pokemontcg.io/v1/cards');
-        setCards(response.data.cards);
-        setLoading(false);
-      }catch(e){
-        console.log('에러');
-      }
-    };
-    getCards();    
+    const endpoint = `https://api.pokemontcg.io/v2/cards?page=1&pageSize=20`;
+    getCards(endpoint);
+
   },[]);
+
+  const getCards = async(endpoint) => {
+    try{
+      const response = await axios.get(endpoint);
+      setCards(response.data.data);
+      setLoading(false);
+      setCurrentPage(response.data.pageSize)
+    }catch(e){
+      console.log('에러');
+    }
+  }; 
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {window.removeEventListener('scroll', handleScroll)
+  }});
 
       return (
         <div className="home">
@@ -30,8 +55,8 @@ const Home = () => {
             </div>
           ):(
           <div className="cards">
-            {cards.map(card => (< Card info={card} key={card.id} image={card.imageUrl} name={card.name}
-            />
+            {cards.map(card => (
+            <Card info={card} key={card.id} image={card.images.small} name={card.name}/>
             ))}
           </div>
           )}

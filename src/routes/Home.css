@@ -28,6 +28,9 @@ h1 {
 }
 
 .cards {
+  position: relative;
+  top: 200px;
+  right: 125px;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 1em;

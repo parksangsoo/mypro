@@ -18,6 +18,7 @@ const Register = ({history}) => {
         auth.createUserWithEmailAndPassword(email, password)
         .then((userAuth) => {
             userAuth.user.updateProfile({
+                
                 displayName: name,
             })
         }).catch((error) => alert(error));
