@@ -1,17 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './Card.css';
 
-const Card = ({ info, image, name }) =>{
+const Card = ({ image, name, cardId }) =>{
 
 return (
         <div className="card">
-            <Link to={{
-                        pathname: '/card-detail',
-                        state: { info },
-            }}>
-            <img src={image} alt={name} title={name}/>
-            </Link>
+            <a href={`/card/${cardId}`}>
+                <img src={image} alt={name}/>
+            </a>
         </div>
     );
 }

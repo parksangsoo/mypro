@@ -17,10 +17,11 @@ function App() {
     <Router>
       <Header />
       <Switch>
-        <Route path="/" exact={true} component={Home}/>
-        <Route path="/login" component={Login} />
-        <Route path="/register" component={Register} />
-        <Route path="/card-detail" component={CardDetail} />
+        <Route exact path="/" exact={true} component={Home}/>
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/register" component={Register} />
+        <Route exact path="/card/:cardId" component={CardDetail} />
+
       </Switch>
     </Router>
     </div>

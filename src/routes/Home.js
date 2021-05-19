@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Card from '../components/Card';
 import './Home.css';
@@ -27,7 +27,7 @@ const Home = () => {
   useEffect(() => {
     const endpoint = `https://api.pokemontcg.io/v2/cards?page=1&pageSize=20`;
     getCards(endpoint);
-
+    
   },[]);
 
   const getCards = async(endpoint) => {
@@ -56,7 +56,7 @@ const Home = () => {
           ):(
           <div className="cards">
             {cards.map(card => (
-            <Card info={card} key={card.id} image={card.images.small} name={card.name}/>
+              <Card key={card.id} cardId={card.id} image={card.images.small} name={card.name}/>
             ))}
           </div>
           )}
