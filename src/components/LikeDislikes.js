@@ -28,6 +28,18 @@ function LikeDislikes(props) {
                 }
             })
         })
+
+        db.collection("dislike").where("commentId","==",props.commentId)
+        .get()
+        .then((querySnapshot) => {
+            setDislikes(querySnapshot.docs.length)
+
+            querySnapshot.docs.map(like => {
+                if (like.userId === props.userId) {
+                    setDislikeAction('disliked')
+                }
+            })
+        })
     
     }, [])
 
@@ -63,7 +75,34 @@ function LikeDislikes(props) {
 
 
     const onDisLike = () => {
-        console.log(props)
+        if (DislikeAction !== null) {
+            db.collection("dislike").where("commentId","==",props.commentId)
+                .get()
+                .then((querySnapshot) => {
+                    db.collection('dislike').doc(querySnapshot.docs[0].id).delete();
+                })
+
+            setDislikes(Dislikes - 1)
+            setDislikeAction(null)
+            
+
+        } else {
+
+            db.collection('dislike').add({
+                uid: user.uid,
+                commentId: props.commentId,
+            });
+
+            setDislikes(Dislikes + 1)
+            setDislikeAction('disliked')
+
+            if(LikeAction !== null ) {
+                setLikeAction(null)
+                setLikes(Likes - 1)
+            }
+
+
+        }
     }
 
     return (
