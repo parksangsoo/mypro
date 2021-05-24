@@ -1,0 +1,12 @@
+.comment{
+    background-color: rgb(139, 184, 169);
+    border-radius: 10px;
+}
+
+.likebox{
+    padding: 10px;
+}
+
+.likebox > span{
+    margin-left: 5px;
+}

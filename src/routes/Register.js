@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import { auth } from '../service/firebase';
 import './Register.css';
-
+import { useDispatch } from 'react-redux';
+import { login } from '../features/userSlice';
 
 const Register = ({history}) => {
 
     const [email, setEmail] = useState("");
     const [password, setPassword ] = useState("");
     const [name, setName] = useState("");
-
+    const dispatch = useDispatch(); 
+    
     const register = () => {
 
         if(!name){
@@ -18,12 +20,18 @@ const Register = ({history}) => {
         auth.createUserWithEmailAndPassword(email, password)
         .then((userAuth) => {
             userAuth.user.updateProfile({
-                
                 displayName: name,
             })
+        .then(()=> {
+            dispatch(login({
+                email: userAuth.user.email,
+                uid: userAuth.user.uid,
+                displayName: name,
+            }))
+        })
+        
         }).catch((error) => alert(error));
-
-        history.push('/login');
+        history.push('/');
     };
 
     return(

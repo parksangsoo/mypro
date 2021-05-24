@@ -19,10 +19,11 @@ const Login = ({history}) => {
             dispatch(login({
                 email: userAuth.user.email,
                 uid: userAuth.user.uid,
+                displayName: userAuth.user.displayName,
             }))
         }).catch((error) => alert(error));
 
-        history.push('/');
+        history.push("/");
     };
 
     return(

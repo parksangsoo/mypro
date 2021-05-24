@@ -6,21 +6,25 @@ import SearchIcon from "@material-ui/icons/Search";
 import { Link } from 'react-router-dom';
 import Menu from './Menu';
 import './RightMenu.css';
+import { auth } from '../service/firebase';
+import { logout } from '../features/userSlice';
 
 function RightMenu() {
 
     const user = useSelector(selectUser)
     const dispatch = useDispatch();
 
-    const logout = () => {
+    const logoutOfApp = () => {
         dispatch(logout());
+        auth.signOut();
+        console.log('logout')
     }
 
     
         if(user){
             return (
                 <div className="loginbar">
-                    <Menu Icon={PersonIcon} title="로그아웃" onClick={logout}/>
+                    <button onClick={logoutOfApp}><Menu Icon={PersonIcon} title="로그아웃" /></button>
                     <Menu Icon={SearchIcon} title="카드검색"/>
                 </div>
             )

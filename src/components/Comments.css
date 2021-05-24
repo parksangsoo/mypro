@@ -1,7 +1,28 @@
-.commnet{
-    background-color:red;
+.commnets{
+    background-color:white;
     position: relative;
     top: 270px;
-    margin-left: auto;
-    margin-right: auto;
+    width: 60%;
+    margin: auto;
+}
+
+.commnets > form >input{
+    border: 0;
+    border-bottom: 1px solid;
+    width: 100%;
+}
+
+.commnets > form >input:focus{
+    outline:none;
+}
+.commnets > form > button{
+    margin-top: 5px;
+    background-color: #065fd4;
+    color: white;
+    float: right;
+    border-radius: 5px;
+    padding: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border: 0;
 }

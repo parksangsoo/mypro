@@ -3,31 +3,51 @@ import Comments from '../components/Comments';
 import CardInfo from '../components/CardInfo';
 import './CardDetail.css';
 import axios from 'axios';
+import { db } from '../service/firebase';
 
 const CardDetail = (props) => {
 
     let cardId = props.match.params.cardId
     const [Card, setCard] = useState("")
     const [Image, setImage] = useState("")
+    const [CommentLists, setCommentLists] = useState([])
 
     useEffect(() => {
+
         const getCard = async() => {
             try{
               const response = await axios.get(`https://api.pokemontcg.io/v2/cards?q=id:${cardId}`);
               setCard(response.data.data[0]);
               setImage(response.data.data[0].images.small);
-              console.log(response.data.data[0].images.small)
             }catch(e){
               console.log('에러');
             }
         }; 
         getCard()
+
+        db.collection("comments").where("postId","==",cardId)
+        .onSnapshot((querySnapshot) => {
+            setCommentLists(
+                querySnapshot.docs.map((doc) => ({
+                    id: doc.id,
+                    data: doc.data(),
+                }))
+            )
+            
+        })
+        
+        
     },[]);
     
+    const updateComment = (newComment) => {
+        setCommentLists(CommentLists.concat(newComment))
+    }
+
     return(
         <div className="carddetail">
             <CardInfo card={Card} image={Image}/>
-            <Comments/>
+            <br/>
+            <Comments CommentLists={CommentLists} postId={Card.id} refreshFunction={updateComment}/>
         </div>
     );
 }
