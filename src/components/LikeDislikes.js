@@ -56,9 +56,16 @@ function LikeDislikes(props) {
             setLikeAction('liked')
 
             if (DislikeAction !== null) {
+                db.collection("dislike").where("commentId","==",props.commentId)
+                .get()
+                .then((querySnapshot) => {
+                    db.collection('dislike').doc(querySnapshot.docs[0].id).delete();
+                })
                 setDislikeAction(null)
                 setDislikes(Dislikes - 1)
             }
+
+            
 
         } else {
 
@@ -93,13 +100,22 @@ function LikeDislikes(props) {
                 commentId: props.commentId,
             });
 
+            
+
             setDislikes(Dislikes + 1)
             setDislikeAction('disliked')
 
             if(LikeAction !== null ) {
+                db.collection("like").where("commentId","==",props.commentId)
+                .get()
+                .then((querySnapshot) => {
+                    db.collection('like').doc(querySnapshot.docs[0].id).delete();
+                })
                 setLikeAction(null)
                 setLikes(Likes - 1)
             }
+
+            
 
 
         }
@@ -109,13 +125,13 @@ function LikeDislikes(props) {
         <>
             <span key="comment-basic-like">
                 <Tooltip title="Like">
-                    <ThumbUpIcon fontSize="small" onClick={onLike} />
+                    <ThumbUpIcon className="thumbup" fontSize="small" onClick={onLike} />
                 </Tooltip>
                 <span className="likecount">{Likes}</span>
             </span>&nbsp;&nbsp;
             <span key="comment-basic-dislike">
                 <Tooltip title="Dislike">
-                    <ThumbDownIcon fontSize="small" onClick={onDisLike}
+                    <ThumbDownIcon className="thumbdown" fontSize="small" onClick={onDisLike}
                     />
                 </Tooltip>
                 <span className="likecount">{Dislikes}</span>

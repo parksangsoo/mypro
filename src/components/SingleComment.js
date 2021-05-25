@@ -50,10 +50,14 @@ function SingleComment(props) {
             
         {OpenReply &&
             <form>
-                <input type="text" onChange={handleChange} value={CommentValue} placeholder="공개 답글 추가..."
-                />
+                <input type="text" onChange={handleChange} value={CommentValue} placeholder="공개 답글 추가..."/>
                 <br />
-                <button onClick={onSubmit}>답글</button>
+                {CommentValue &&
+                    <button onClick={onSubmit}>답글</button>
+                }
+                {!CommentValue &&
+                    <span>답글</span>
+                }
             </form>
         }
         </div>

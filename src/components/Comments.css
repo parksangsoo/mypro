@@ -26,3 +26,23 @@
     padding-right: 25px;
     border: 0;
 }
+
+.commnets > form > button:hover{
+    cursor: pointer;
+}
+
+.commnets > form > span{
+    margin-top: 5px;
+    background-color: #dbdbdb;
+    color: white;
+    float: right;
+    border-radius: 5px;
+    padding: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border: 0;
+}
+
+.commnets > form > span:hover{
+    cursor: default;
+}

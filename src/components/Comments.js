@@ -6,8 +6,11 @@ import { useSelector } from 'react-redux';
 import SingleComment from './SingleComment';
 import ReplyComment from './ReplyComment';
 import firebase from 'firebase';
+import { useHistory } from "react-router-dom";
 
 function Comments(props) {
+    let history = useHistory();
+
     const user = useSelector(selectUser);
     const [Comment, setComment] = useState("")
 
@@ -16,6 +19,12 @@ function Comments(props) {
     }
 
     const onSubmit = (e) => {
+
+        if(!user){
+            alert("로그인 후 입력해주세요!");
+            return history.replace('/login')
+        }
+
         console.log(Comment);
         e.preventDefault();
 
@@ -35,7 +44,12 @@ function Comments(props) {
             <form>
                 <input type="text" onChange={handleChange} value={Comment} placeholder="공개 댓글 추가..."/>
                 <br/>
-                <button onClick={onSubmit}>댓글</button>
+                {Comment &&
+                    <button onClick={onSubmit}>댓글</button>
+                }
+                {!Comment &&
+                    <span>댓글</span>
+                }
             </form>
             <br/>
             <br/>

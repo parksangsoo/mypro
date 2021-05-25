@@ -41,7 +41,6 @@ function App() {
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
         <Route exact path="/card/:cardId" component={CardDetail} />
-
       </Switch>
     </Router>
     </div>

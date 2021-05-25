@@ -1,12 +1,74 @@
-.comment{
-    background-color: rgb(139, 184, 169);
+
+
+.comment > p {
+    padding: 5px;
+    padding-left:12px;
+    background-color:rgb(114, 221, 180);
     border-radius: 10px;
+    width: 70px;
+    
+}
+
+.comment > span {
+    padding-left: 10px;
 }
 
 .likebox{
+    display: flex;
     padding: 10px;
+    align-items: center;
 }
 
 .likebox > span{
     margin-left: 5px;
+}
+
+.likebox > span:hover{
+    cursor:pointer;
+}
+
+.comment > form {
+    width: 80%;
+    margin-left: 110px;
+}
+
+.comment > form > input{
+    border: 0;
+    border-bottom: 1px solid;
+    width: 100%;
+}
+
+.comment > form >input:focus{
+    outline:none;
+}
+.comment > form > button{
+    margin-top: 5px;
+    float: right;
+    background-color: #065fd4;
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border: 0;
+}
+
+.comment > form > button:hover{
+    cursor: pointer;
+}
+
+.comment > form > span{
+    margin-top: 5px;
+    background-color: #dbdbdb;
+    color: white;
+    float: right;
+    border-radius: 5px;
+    padding: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border: 0;
+}
+
+.comment > form > span:hover{
+    cursor: default;
 }
