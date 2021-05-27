@@ -10,6 +10,8 @@ import Header from './components/Header';
 import CardDetail from './routes/CardDetail';
 import Login from './routes/Login';
 import Register from './routes/Register';
+import Upload from './routes/Upload';
+import Store from './routes/Store';
 import { useDispatch } from 'react-redux';
 import { login, logout } from './features/userSlice';
 import { auth } from './service/firebase';
@@ -40,6 +42,8 @@ function App() {
         <Route exact path="/" exact={true} component={Home}/>
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
+        <Route exact path="/card/upload" component={Upload} />
+        <Route exact path="/card/store" component={Store} />
         <Route exact path="/card/:cardId" component={CardDetail} />
       </Switch>
     </Router>
