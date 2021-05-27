@@ -7,7 +7,7 @@ function CardInfo({card, image}) {
         <div className="cardinfo">
             <div className="cardimage">
                 <img src={image}/>
-                <p>일러스트:{card.artist}</p>
+                <p>일러스트a:{card.artist}</p>
             </div>
             <div className="cardbox">
                 <div className="cardname">
